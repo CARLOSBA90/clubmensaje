@@ -1,6 +1,6 @@
-### Club Mensaje
-#- Portal de noticias
-## Herramientas a utilizar
+#### Club Mensaje
+# - Portal de noticias
+### Herramientas a utilizar
 - Spring
 - MySql
 - Bootstrap
