@@ -4,10 +4,11 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Hello there</title>
+<title>Noticia</title>
 </head>
 <body>
-<h1> Hello my frents</h1>
-
+   <h1> ${titulo}</h1>
+   <h4> ${fecha}</h4>
+    <h2> ${contenido}</h2>
 </body>
 </html>
