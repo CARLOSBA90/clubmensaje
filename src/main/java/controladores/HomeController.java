@@ -7,6 +7,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -22,10 +23,11 @@ public class HomeController {
 		return "home";
 	}
 	
-	@RequestMapping(value="/noticia")
-	public String mostrarNoticia(Model model) {
-		String titulo = "Noticia";
-		String contenido = "Contenido ...";
+	@RequestMapping(value="/noticia/{id}",method=RequestMethod.GET)
+	public String mostrarNoticia(Model model,@PathVariable("id") int idNoticia) {
+		System.out.println(idNoticia);
+		String titulo = "Noticia ID 90";
+		String contenido = "---- Contenido -----";
 		LocalDate fecha = LocalDate.of(2021, 12, 24);
 		
 		model.addAttribute("titulo",  titulo);
