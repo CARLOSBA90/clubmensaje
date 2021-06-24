@@ -3,9 +3,8 @@
     <div class="container d-flex align-items-center">
 
       <div class="logo me-auto">
-        <h1><a href="index.html">Club Mensaje</a></h1>
+        <h1><a href="#">Club Mensaje</a></h1>
         <!--logo-->
-        <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
       </div>
 
       <nav id="navbar" class="navbar">

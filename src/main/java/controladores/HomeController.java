@@ -34,8 +34,13 @@ public class HomeController {
 		model.addAttribute("contenido", contenido);
 		model.addAttribute("fecha", fecha);
 		return "noticia";
-		
 	}
+	
+	@RequestMapping(value="/panel/control",method=RequestMethod.GET)
+	public String loginPanel(Model model) {
+		return "loginPanel";
+	}
+	
 	
 	private List<Noticia> getNoticia(){
 		SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");

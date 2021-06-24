@@ -79,7 +79,7 @@
 
       </div>
     </section><!-- Fin seccion -->
-
+  <!-- Implementar: publicidad lateral, carrousel top noticias, link a todas las secciones -->
   </main><!-- Fin #main -->
 
 <jsp:include page="includes/pie.jsp"></jsp:include>
