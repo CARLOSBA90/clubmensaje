@@ -31,6 +31,12 @@ public class Noticia {
 		this.vistas = vistas;
 		this.autor = autor;
 	}
+	public Noticia(String titulo, Date fecha, String contenido, String imagen) {
+		this.titulo = titulo;
+		this.fecha = fecha;
+		this.contenido = contenido;
+		this.imagen = imagen;
+	}
 	public int getId() {
 		return id;
 	}

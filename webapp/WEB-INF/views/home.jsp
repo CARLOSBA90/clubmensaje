@@ -37,54 +37,37 @@
     </section><!-- detalle -->
 
     <!-- =======  ======= -->
+	<div class="container-fluid">
+		<div class="row m-1">
+			<div class="col-md-10">
+					<c:forEach items="${ noticia }" var="noticias">
+						<div class="card bg-light mb-3">
+								<img class="card-img-top" src="${recursos}/images/${noticias.imagen}"
+									alt="imagen">
+								<div class="card-body">
+									<h5 class="card-title">${noticias.titulo}</h5>
+									<p class="card-text">
+										Fecha:
+										<fmt:formatDate value="${noticias.fecha}" pattern="dd-MM-yyyy" />
+									<p>
+										<br> ${noticias.contenido}
 
-   <c:forEach items="${ noticia }" var="noticias">
-	<div class="card mb-6">
-		<img class="card-img-top" src="${recursos}/images/boruto.png" alt="Card image cap">
-		<div class="card-body">
-			<h5 class="card-title">${noticias.titulo}</h5>
-			<p class="card-text">
-			Fecha:
-							<fmt:formatDate value="${noticias.fecha}" pattern="dd-MM-yyyy" />
-							<p>
-								<br> ${noticias.contenido}
-			
-			</p>
-			<p class="card-text">
-				<small class="text-muted">TEXTO GRIS</small>
-			</p>
-		</div>
-	</c:forEach>
-
-
-			
-
-				<div class="col-lg-12">
-					<div class="cuadro-detalle-slider swiper-container">
-						<div class="swiper-wrapper align-items-center">
-
-							<div class="swiper-slide">
-								<img src="${recursos}/images/boruto.png" alt="">
-							</div>
-
-							<div class="swiper-slide">
-								<img src="${recursos}/images/cloud.png" alt="">
-							</div>
-
-							<div class="swiper-slide">
-								<img src="${recursos}/images/spring.jpg" alt="">
-							</div>
-
+									</p>
+									<p class="card-text">
+										<small class="text-muted">TEXTO GRIS</small>
+									</p>
+								</div>
 						</div>
-						<div class="swiper-pagination"></div>
-					</div>
-				</div>
-
-
-
+					</c:forEach>
+				
 			</div>
-		</section>
-		<!-- Fin seccion -->
+
+			<div class="col-2"><img src="${recursos}/images/ads.png"
+									alt="imagen"></div>
+			
+		</div>
+	</div>
+	<!-- Fin seccion -->
 		<!-- Implementar: publicidad lateral, carrousel top noticias, link a todas las secciones -->
 	</main><!-- Fin #main -->
 

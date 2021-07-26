@@ -52,8 +52,9 @@ public class HomeController {
 		List<Noticia> lista = null;
 		try {
 			lista = new LinkedList<>();
-			lista.add(new Noticia("Noticia 1", formatter.parse("21-12-2021")," Contenido de la noticia 1"));
-			lista.add(new Noticia("Noticia 2", formatter.parse("21-1-2022")," Contenido de la noticia 2"));
+			lista.add(new Noticia("Noticia 1", formatter.parse("21-12-2021")," Contenido de la noticia 1 ..","boruto.png"));
+			lista.add(new Noticia("Noticia 2", formatter.parse("21-1-2022")," Contenido de la noticia 2 ..","cloud.png"));
+			lista.add(new Noticia("Noticia 2", formatter.parse("21-1-2022")," Contenido de la noticia 3 ..","spring.jpg"));
 			return lista;
 		}catch(ParseException e) {
 			return null;
