@@ -47,20 +47,8 @@
     <section id="portfolio-details" class="portfolio-details">
 	<div class="container">
 		<div class="row justify-content-md-center">
-			<div class="col col-lg-4">
-				<form>
-					<div class="mb-3">
-						<label for="exampleInputEmail1" class="form-label">Usuario</label>
-						<input type="text" class="form-control" id="usuario"
-							aria-describedby="usuario">
-					</div>
-					<div class="mb-3">
-						<label for="contrasena" class="form-label">Contraseña</label> <input
-							type="password" class="form-control" id="contrasena">
-					</div>
-					<button type="submit" class="btn btn-primary">Entrar</button>
-				</form>
-			</div>
+			
+			
 		</div>
 	</div>
 	</section>

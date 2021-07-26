@@ -37,50 +37,56 @@
     </section><!-- detalle -->
 
     <!-- =======  ======= -->
-    <section id="portfolio-details" class="portfolio-details">
-      <div class="container">
-         <c:forEach items="${ noticia }" var="noticias">
-          <div class="col-12">
-            <div class="portfolio-info">
-              <h3>${noticias.titulo} </h3>
-              Fecha: <fmt:formatDate value="${noticias.fecha}" pattern="dd-MM-yyyy"/>
-               <p>
-               <br>
-               ${noticias.contenido}
-              </p>
-            </div>
-          </div>
-          <br>
-          
-         </c:forEach>
-          
-          <div class="col-lg-12">
-            <div class="portfolio-details-slider swiper-container">
-              <div class="swiper-wrapper align-items-center">
 
-                <div class="swiper-slide">
-                  <img src="${recursos}/images/boruto.png" alt="">
-                </div>
+   <c:forEach items="${ noticia }" var="noticias">
+	<div class="card mb-6">
+		<img class="card-img-top" src="${recursos}/images/boruto.png" alt="Card image cap">
+		<div class="card-body">
+			<h5 class="card-title">${noticias.titulo}</h5>
+			<p class="card-text">
+			Fecha:
+							<fmt:formatDate value="${noticias.fecha}" pattern="dd-MM-yyyy" />
+							<p>
+								<br> ${noticias.contenido}
+			
+			</p>
+			<p class="card-text">
+				<small class="text-muted">TEXTO GRIS</small>
+			</p>
+		</div>
+	</c:forEach>
 
-                <div class="swiper-slide">
-                  <img src="${recursos}/images/cloud.png" alt="">
-                </div>
 
-                <div class="swiper-slide">
-                  <img src="${recursos}/images/spring.jpg" alt="">
-                </div>
+			
 
-              </div>
-              <div class="swiper-pagination"></div>
-            </div>
-          </div>
-        
-        
+				<div class="col-lg-12">
+					<div class="cuadro-detalle-slider swiper-container">
+						<div class="swiper-wrapper align-items-center">
 
-      </div>
-    </section><!-- Fin seccion -->
-  <!-- Implementar: publicidad lateral, carrousel top noticias, link a todas las secciones -->
-  </main><!-- Fin #main -->
+							<div class="swiper-slide">
+								<img src="${recursos}/images/boruto.png" alt="">
+							</div>
+
+							<div class="swiper-slide">
+								<img src="${recursos}/images/cloud.png" alt="">
+							</div>
+
+							<div class="swiper-slide">
+								<img src="${recursos}/images/spring.jpg" alt="">
+							</div>
+
+						</div>
+						<div class="swiper-pagination"></div>
+					</div>
+				</div>
+
+
+
+			</div>
+		</section>
+		<!-- Fin seccion -->
+		<!-- Implementar: publicidad lateral, carrousel top noticias, link a todas las secciones -->
+	</main><!-- Fin #main -->
 
 <jsp:include page="includes/pie.jsp"></jsp:include>
 
