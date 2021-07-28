@@ -38,10 +38,10 @@
 
     <!-- =======  ======= -->
 	<div class="container-fluid">
-		<div class="row m-1">
+		<div class="row m-1 p-2">
 			<div class="col-md-10">
 					<c:forEach items="${ noticia }" var="noticias">
-						<div class="card bg-light mb-3">
+						<div class="card bg-light mb-3 p-2">
 								<img class="card-img-top" src="${recursos}/images/${noticias.imagen}"
 									alt="imagen">
 								<div class="card-body">
