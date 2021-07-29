@@ -37,6 +37,9 @@
         <div class="d-flex justify-content-between align-items-center">
           <ol>
             <li><a href="/portal/">Inicio</a></li>
+         <!--   <li><a href="/portal/">Mis noticias</a></li> -->
+        <!--    <li><a href="/portal/">Estadisticas</a></li>  -->
+            <li><a href="/portal/">Cerrar sesión</a></li>
           </ol>
         </div>
 

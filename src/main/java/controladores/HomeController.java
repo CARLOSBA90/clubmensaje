@@ -36,17 +36,6 @@ public class HomeController {
 		return "noticia";
 	}
 	
-	@RequestMapping(value="/panel/control",method=RequestMethod.GET)
-	public String loginPanel(Model model) {
-		return "loginPanel";
-	}
-	
-	@RequestMapping(value="/panel/acceso",method=RequestMethod.GET)
-	public String panel(Model model) {
-		return "panel";
-	}
-	
-	
 	private List<Noticia> getNoticia(){
 		SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
 		List<Noticia> lista = null;
