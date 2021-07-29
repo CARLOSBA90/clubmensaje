@@ -47,14 +47,13 @@
     </section><!-- detalle -->
 
     <!-- =======  ======= -->
-    <section id="portfolio-details" class="portfolio-details">
-	<div class="container">
-		<div class="row justify-content-md-center">
-			
-			
+ 	<div class="container-fluid">
+		<div class="row m-1 p-2">
+		<div class="col-10">
+		
+		</div>		
 		</div>
 	</div>
-	</section>
 
 
 	<!-- Fin seccion -->

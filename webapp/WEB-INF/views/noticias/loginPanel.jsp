@@ -44,10 +44,11 @@
     </section><!-- detalle -->
 
     <!-- =======  ======= -->
-    <section id="portfolio-details" class="portfolio-details">
-	<div class="container">
-		<div class="row justify-content-md-center">
-			<div class="col col-lg-4">
+	<div class="container-fluid">
+		<div class="row m-4 p-2">
+		  <div class="row justify-content-md-center">
+			<div class="col-8">
+
 				<form>
 					<div class="mb-3">
 						<label for="exampleInputEmail1" class="form-label">Usuario</label>
@@ -61,9 +62,9 @@
 					<button type="submit" class="btn btn-primary">Entrar</button>
 				</form>
 			</div>
+			</div>
 		</div>
 	</div>
-	</section>
 
 
 	<!-- Fin seccion -->

@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 @RequestMapping("/panel")
-public class NewsController {
+public class ControladorNoticias {
 	
 	@GetMapping(value="/nuevo")
 	public String nueva() {
