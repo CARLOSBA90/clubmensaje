@@ -7,6 +7,7 @@
 <head>
 <meta charset="UTF-8">
   <spring:url value="/resources" var="recursos"></spring:url>
+  <c:set var="path" value="${pageContext.request.contextPath}"/>
 <title>Club Mensaje</title>
   <!-- Vendor CSS Files -->
   <link href="${recursos}/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -37,21 +38,34 @@
     </section><!-- detalle -->
 
     <!-- =======  ======= -->
-    <section id="portfolio-details" class="portfolio-details">
-      <div class="container">
-          <div class="col-12">
-            <div class="portfolio-info">
-              <h3> ${titulo} </h3>
-              Fecha: ${fecha}<!--<fmt:formatDate value="${noticias.fecha}" pattern="dd-MM-yyyy"/>-->
-               <p>
-               <br>
-               ${contenido}
-              </p>
-            </div>
-          </div>
-          <br>
-      </div>
-    </section><!-- Fin seccion -->
+ 	<div class="container-fluid">
+		<div class="row m-1 p-2">
+			<div class="col-md-10">
+						<div class="card bg-light mb-3 p-2">
+								<img class="card-img-top" src="${recursos}/images/${noticia.imagen}"
+									alt="imagen">
+								<div class="card-body">
+									<h5 class="card-title">${noticia.titulo}</h5>
+									<p class="card-text">
+										Fecha:
+										<fmt:formatDate value="${noticia.fecha}" pattern="dd-MM-yyyy" />
+									<p>
+										<br> ${noticia.contenido}
+
+									</p>
+									<p class="card-text">
+										<a role="button" class="btn btn-success" href="${path}">Volver</a>
+									</p>
+								</div>
+						</div>
+				
+			</div>
+
+			<div class="col-2"><img src="${recursos}/images/ads.png"
+									alt="imagen"></div>
+			
+		</div>
+	</div>
 
   </main><!-- Fin #main -->
 

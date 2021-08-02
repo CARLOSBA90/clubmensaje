@@ -41,8 +41,8 @@ public class Noticia {
 		this.fecha = new Date();
 	}
 	
-	public Noticia(String titulo, Date fecha, String contenido, String imagen) {
-		this.id = 1;
+	public Noticia(int id, String titulo, Date fecha, String contenido, String imagen) {
+		this.id = id;
 		this.titulo = titulo;
 		this.contenido = contenido;
 		this.fecha = fecha;

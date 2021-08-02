@@ -7,6 +7,7 @@
 <head>
 <meta charset="UTF-8">
   <spring:url value="/resources" var="recursos"></spring:url>
+  <c:set var="path" value="${pageContext.request.contextPath}"/>
 <title>Club Mensaje</title>
   <!-- Vendor CSS Files -->
   <link href="${recursos}/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -51,10 +52,10 @@
 										<fmt:formatDate value="${noticias.fecha}" pattern="dd-MM-yyyy" />
 									<p>
 										<br> ${noticias.contenido}
-
+                                   
 									</p>
 									<p class="card-text">
-										<small class="text-muted">TEXTO GRIS</small>
+										<a role="button" class="btn btn-success" href="${path}/noticia/${noticias.id}">Ver más</a>
 									</p>
 								</div>
 						</div>
@@ -67,9 +68,10 @@
 			
 		</div>
 	</div>
+	</main>
 	<!-- Fin seccion -->
 		<!-- Implementar: publicidad lateral, carrousel top noticias, link a todas las secciones -->
-	</main><!-- Fin #main -->
+ <!-- Fin #main -->
 
 <jsp:include page="includes/pie.jsp"></jsp:include>
 
