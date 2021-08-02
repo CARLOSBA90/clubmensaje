@@ -13,6 +13,7 @@ public class Noticia {
     private String descripcionImagen; /// Derechos de autor sobre la imagen
     private int vistas;  // registra numero de veces visitados dicha noticia
     private String autor;
+    private boolean estado;
     
 	public Noticia(String titulo, Date fecha, String contenido) {
 		this.titulo = titulo;
@@ -31,10 +32,20 @@ public class Noticia {
 		this.vistas = vistas;
 		this.autor = autor;
 	}
-	public Noticia(String titulo, Date fecha, String contenido, String imagen) {
+	
+	public Noticia(int id, String titulo, String contenido, boolean estado) {
+		this.id = 1;
 		this.titulo = titulo;
-		this.fecha = fecha;
 		this.contenido = contenido;
+		this.estado = estado;
+		this.fecha = new Date();
+	}
+	
+	public Noticia(String titulo, Date fecha, String contenido, String imagen) {
+		this.id = 1;
+		this.titulo = titulo;
+		this.contenido = contenido;
+		this.fecha = fecha;
 		this.imagen = imagen;
 	}
 	public int getId() {
@@ -91,10 +102,19 @@ public class Noticia {
 	public void setAutor(String autor) {
 		this.autor = autor;
 	}
+	public boolean isEstado() {
+		return estado;
+	}
+	public void setEstado(boolean estado) {
+		this.estado = estado;
+	}
 	@Override
 	public String toString() {
-		return "Noticia [titulo=" + titulo + ", fecha=" + fecha + ", contenido=" + contenido + "]";
-	} 
+		return "Noticia [id=" + id + ", titulo=" + titulo + ", fecha=" + fecha + ", contenido=" + contenido
+				+ ", estado=" + estado + "]";
+	}
+	
+	
 	
 	
     

@@ -52,41 +52,44 @@
     </section><!-- detalle -->
 
     <!-- =======  ======= -->
-	<form>
-		<div class="container-fluid p-4">
+    <spring:url value="/panel/guardar" var="urlForm"></spring:url>
+	<form action=${urlForm} method="post">
+		<div class="container-fluid p-1">
 			<div class="row justify-content-md-center">
 				<div class="col-10">
-
 					<div class="form-group row">
 						<label for="titulo" class="col-sm-2 col-form-label">Titulo</label>
 						<div class="col-sm-10 p-2">
 							<input type="text" class="form-control" id="titulo"
-								placeholder="Nueva noticia">
+								placeholder="Titulo nueva noticia" name="titulo">
 						</div>
 					</div>
 					<div class="form-group row">
 						<label for="categoria" class="col-sm-2 col-form-label">Categoria</label>
 						<div class="col-sm-10 p-2">
-							<select class="custom-select">
-								<option selected>Ciencias</option>
-								<option value="1">Deportes</option>
-								<option value="2">Historia</option>
-								<option value="3">Sucesos</option>
+							<select class="custom-select" name="categoria">
+							<option value="Sucesos" selected>Sucesos</option>
+							<option value="Deportes">Deportes</option>
+						    <option value="Musica">Musica</option>
+							<option value="Ocio y Entrenimiento">Ocio y Entrenimiento</option>
+							<option value="Recetas">Recetas</option>
+							<option value="Ciencia y Tecnologia">Ciencia y Tecnologia</option>
 							</select>
 						</div>
 					</div>
 					<div class="form-group row">
-						<textarea>
+						<textarea  name="contenido" id="contenido">
                           Contenido de noticia..!
                         </textarea>
 					</div>
 
 					<div class="form-group row">
-						<div class="col-sm-2 p-3">Publicar</div>
-						<div class="col-sm-10 p-3">
-							<div class="form-check">
-								<input class="form-check-input" type="checkbox" id="gridCheck1">
-							</div>
+						<label for="estado" class="col-sm-2 col-form-label">Estado</label>
+						<div class="col-sm-10 p-2">
+							<select class="custom-select" name="estado">
+							<option value="Activo" selected>Activo</option>
+							<option value="Inactivo">Inactivo</option>
+							</select>
 						</div>
 					</div>
 

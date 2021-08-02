@@ -10,18 +10,27 @@
 			http://www.springframework.org/schema/mvc 
 			http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd">
 
-	<context:component-scan base-package="controladores"></context:component-scan>
+      <!-- componente a escanear como controlador -->
+	<context:component-scan base-package="controladores" />
+	
+		 <!-- activación de las anotaciones -->
+	    <mvc:annotation-driven />
+	
+	    <!-- Agregar beans a continuación -->
+        <!-- Instancia de  viewResolver-->
 	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+	 
+	    <!-- ubicación de las vistas -->
 		<property name="prefix">
 			<value>/WEB-INF/views/</value>
 		</property>
+	 <!-- extención de las vistas -->
 		<property name="suffix">
 			<value>.jsp</value>
 		</property>
 	</bean>
-	<mvc:annotation-driven />
-	<mvc:resources mapping="/resources/**" location="/resources/"  
-    cache-period="31556926"/>
+	
+	  <mvc:resources mapping="/resources/**" location="/resources/" cache-period="31556926"/>
 
     
 	
