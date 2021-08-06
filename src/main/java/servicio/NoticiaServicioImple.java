@@ -8,6 +8,8 @@ import org.springframework.stereotype.Service;
 
 import modelo.Noticia;
 
+
+/// Implementacion de interfaz, llamada a servicio para la entidad Noticias
 @Service
 public class NoticiaServicioImple implements INoticiaServicio{
 	
@@ -41,7 +43,7 @@ public class NoticiaServicioImple implements INoticiaServicio{
 
 	
 	public void guardarNoticia(Noticia noticia) {
-		
+		lista.add(noticia);
 		System.out.println("METODO GUARDAR NOTICIA DEL SERVICIO: "+noticia.toString());
 	}
 

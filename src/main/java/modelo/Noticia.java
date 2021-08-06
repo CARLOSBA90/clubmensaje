@@ -15,6 +15,11 @@ public class Noticia {
     private String autor;
     private boolean estado;
     
+    public Noticia(){
+    	this.fecha = new Date();
+    	this.imagen = "nuevo.png";
+    }
+    
 	public Noticia(String titulo, Date fecha, String contenido) {
 		this.titulo = titulo;
 		this.fecha = fecha;
@@ -114,9 +119,5 @@ public class Noticia {
 				+ ", estado=" + estado + "]";
 	}
 	
-	
-	
-	
-    
     
 }

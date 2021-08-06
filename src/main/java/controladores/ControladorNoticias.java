@@ -2,6 +2,8 @@ package controladores;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -32,11 +34,20 @@ public class ControladorNoticias {
 	}
 	
 	@PostMapping(value="/guardar")
-	public String guardar(@RequestParam("titulo") String titulo, @RequestParam("categoria") String categoria,
-			@RequestParam("contenido") String contenido, @RequestParam("estado") String estado) {
-		Noticia noticia = new Noticia(1,titulo, contenido, (estado.equals("Activo"))? true:false);
-		servicioNoticias.guardarNoticia(noticia);
-		return "noticias/nuevaNoticia";
+	public String guardar(Noticia noticia, BindingResult result, Model model) {
+		/// Data binding, conversion automatica de los datos en la entidad Noticia
+	   if(!result.hasErrors())
+		{  servicioNoticias.guardarNoticia(noticia);
+		   return "noticias/nuevaNoticia";
+		}else {
+			String errores = "";
+			for(ObjectError error: result.getAllErrors()) {
+				errores +=error.getDefaultMessage()+" \n";
+			}
+			model.addAttribute("mensaje", errores);
+			return "noticias/errorNoticia";
+		}
+			
 	}
 	
 	

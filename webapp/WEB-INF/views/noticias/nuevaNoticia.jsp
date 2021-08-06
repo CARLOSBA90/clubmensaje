@@ -13,14 +13,8 @@
   <link href="${recursos}/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="${recursos}/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="${recursos}/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-  <script src="https://cdn.tiny.cloud/1/b7dhb8dy7o7uz7k5qfkdwst9niett7tys9uc0k8dtfva637j/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
-
   <!-- Template Main CSS File -->
   <link href="${recursos}/css/style.css" rel="stylesheet">
-  
-  <script src="https://cdn.tiny.cloud/1/b7dhb8dy7o7uz7k5qfkdwst9niett7tys9uc0k8dtfva637j/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
-  
-
 
 </head>
 <body>
@@ -65,15 +59,15 @@
 						</div>
 					</div>
 					<div class="form-group row">
-						<label for="categoria" class="col-sm-2 col-form-label">Categoria</label>
+						<label for="seccion" class="col-sm-2 col-form-label">Sección</label>
 						<div class="col-sm-10 p-2">
-							<select class="custom-select" name="categoria">
-							<option value="Sucesos" selected>Sucesos</option>
-							<option value="Deportes">Deportes</option>
-						    <option value="Musica">Musica</option>
-							<option value="Ocio y Entrenimiento">Ocio y Entrenimiento</option>
-							<option value="Recetas">Recetas</option>
-							<option value="Ciencia y Tecnologia">Ciencia y Tecnologia</option>
+							<select class="custom-select" name="seccion">
+							<option value="1" selected>Sucesos</option>
+							<option value="2">Deportes</option>
+						    <option value="3">Musica</option>
+							<option value="4">Ocio y Entrenimiento</option>
+							<option value="5">Recetas</option>
+							<option value="6">Ciencia y Tecnologia</option>
 							</select>
 						</div>
 					</div>
@@ -87,8 +81,8 @@
 						<label for="estado" class="col-sm-2 col-form-label">Estado</label>
 						<div class="col-sm-10 p-2">
 							<select class="custom-select" name="estado">
-							<option value="Activo" selected>Activo</option>
-							<option value="Inactivo">Inactivo</option>
+							<option value="true" selected>Activo</option>
+							<option value="false">Inactivo</option>
 							</select>
 						</div>
 					</div>
@@ -110,7 +104,17 @@
   <script src="${recursos}/vendor/glightbox/js/glightbox.min.js"></script>
   <script src="${recursos}/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="${recursos}/vendor/swiper/swiper-bundle.min.js"></script>
-
+  <script src="${recursos}/tinymce/tinymce.min.js"></script>
+    <script>
+      tinymce.init({
+          selector: '#contenido',
+          plugins: "textcolor, table lists code",
+          toolbar: " undo redo | bold italic | alignleft aligncenter alignright alignjustify \n\
+                    | bullist numlist outdent indent | forecolor backcolor table code",
+          height : "290"
+              
+      });
+    </script>
   <!-- Template Main JS File -->
   <script src="${recursos}/js/main.js"></script>
 
