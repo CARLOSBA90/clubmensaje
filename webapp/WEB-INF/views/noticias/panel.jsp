@@ -48,10 +48,65 @@
 
     <!-- =======  ======= -->
  	<div class="container-fluid">
-		<div class="row m-1 p-2">
-		<div class="col-10">
-		
-		</div>		
+		<div class="row m-1 p-2  d-flex justify-content-center">
+		<div>Lista de noticias</div>
+			<div class="col-10">
+				<table class="table table-sm">
+					<thead>
+						<tr>
+							<th scope="col">#</th>
+							<th scope="col">Titulo</th>
+							<th scope="col">Fecha</th>
+							<th scope="col">Sección</th>
+							<th scope="col">Vistas</th>
+							<th scope="col">Estado</th>
+							<th scope="col">Editar</th>
+						</tr>
+					</thead>
+					<tbody>
+					<c:forEach items="${ noticia }" var="noticias">
+						<tr>
+							<th scope="row">${noticias.id}</th>
+							<td>${noticias.titulo}</td>
+							<td><fmt:formatDate value="${noticias.fecha}" pattern="dd-MM-yyyy" /></td>
+							<c:set var = "seccion" scope = "session" value = "${noticias.seccion}"/>
+							 <c:choose>
+							  <c:when test = "${seccion == 1}">
+							  <td>Sucesos</td>
+							  </c:when>
+							  <c:when test = "${seccion == 2}">
+							  <td>Deportes</td>
+							  </c:when>
+							  <c:when test = "${seccion == 3}">
+							  <td>Musica</td>
+							  </c:when>
+							  <c:when test = "${seccion == 4}">
+							  <td>Ocio y Entrenimiento</td>
+							  </c:when>
+							  <c:when test = "${seccion == 5}">
+							  <td>Recetas</td>
+							  </c:when>
+							  <c:when test = "${seccion == 6}">
+							  <td>Ciencia y Tecnologia</td>
+							  </c:when>
+							</c:choose>
+							<td> - </td>
+							<c:set var = "estado" scope = "session" value = "${noticias.estado}"/>
+							 <c:choose>
+							  <c:when test = "${estado == true}">
+							<td><a class="btn btn-success btn-sm" href="#" role="button">Activo</a></td>
+							</c:when>
+							  <c:otherwise>
+							  <td><a class="btn btn-danger btn-sm" href="#" role="button">Inactivo</a></td>
+							  </c:otherwise>
+							</c:choose>
+							<td><a class="btn btn-dark btn-sm" href="#" role="button">Editar</a></td>
+						</tr>
+					</c:forEach>
+					</tbody>
+				</table>
+
+			</div>
 		</div>
 	</div>
 

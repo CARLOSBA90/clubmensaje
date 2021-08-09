@@ -19,8 +19,7 @@ public class ControladorHome {
 	
 	@GetMapping(value="/")
 	public String goHome(Model model) {
-		List<Noticia> noticias = servicioNoticias.buscar();
-		model.addAttribute("noticia",noticias);
+		model = Buscar(model);
 		return "home";
 	}
 	
@@ -46,5 +45,11 @@ public class ControladorHome {
 			return null;
 		}
 	}*/
+	public Model Buscar(Model model) {
+		 List<Noticia> noticias = servicioNoticias.buscar();
+		 model.addAttribute("noticia",noticias);
+		return model;
+	}
+	
 
 }
