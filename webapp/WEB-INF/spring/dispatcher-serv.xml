@@ -32,6 +32,6 @@
 	
 	  <mvc:resources mapping="/resources/**" location="/resources/" cache-period="31556926"/>
 
-    
+    <bean id="multipartResolver" class="org.springframework.web.multipart.support.StandardServletMultipartResolver" />
 	
 </beans>

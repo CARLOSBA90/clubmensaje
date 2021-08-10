@@ -20,9 +20,9 @@ public class NoticiaServicioImple implements INoticiaServicio{
 		SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
 		try {
 			lista = new LinkedList<>();
-			lista.add(new Noticia(1, "Noticia 1", formatter.parse("21-12-2021")," Contenido de la noticia 1 ..","boruto.png"));
-			lista.add(new Noticia(2, "Noticia 2", formatter.parse("21-1-2022")," Contenido de la noticia 2 ..","cloud.png"));
-			lista.add(new Noticia(3, "Noticia 2", formatter.parse("21-1-2022")," Contenido de la noticia 3 ..","spring.jpg"));
+			lista.add(new Noticia(1, "Noticia 1", formatter.parse("21-12-2021"),2," Contenido de la noticia 1 ..","boruto.png"));
+			lista.add(new Noticia(2, "Noticia 2", formatter.parse("21-1-2022"),3," Contenido de la noticia 2 ..","cloud.png"));
+			lista.add(new Noticia(3, "Noticia 2", formatter.parse("21-1-2022"),4," Contenido de la noticia 3 ..","spring.jpg"));
 		}catch(ParseException e) {
 		 System.out.println("ERROR DE PARSEO: FECHAS DE NOTICIA EJEMPLO");
 		}

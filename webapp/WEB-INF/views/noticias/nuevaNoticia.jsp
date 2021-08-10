@@ -47,7 +47,7 @@
 
     <!-- =======  ======= -->
     <spring:url value="/panel/guardar" var="urlForm"></spring:url>
-	<form action=${urlForm} method="post">
+	<form action=${urlForm} method="post" enctype="multipart/form-data">
 		<div class="container-fluid p-1">
 			<div class="row justify-content-md-center">
 				<div class="col-10">
@@ -84,6 +84,13 @@
 							<option value="true" selected>Activo</option>
 							<option value="false">Inactivo</option>
 							</select>
+						</div>
+					</div>
+					
+					<div class="form-group row">
+						<label for="cargarImagen" class="col-sm-2 col-form-label">Cargar Imagen</label>
+						<div class="col-sm-10 p-2">
+						 <input type="file" id="cargarImagen" name="cargarImagen" />
 						</div>
 					</div>
 

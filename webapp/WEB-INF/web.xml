@@ -16,6 +16,11 @@
 		<param-value>/WEB-INF/spring/dispatcher-serv.xml</param-value>
 		</init-param>
 		<load-on-startup>1</load-on-startup>
+		
+		<multipart-config>
+			<location>c:\temporal</location>
+		</multipart-config>
+		
 	</servlet>
 		<servlet-mapping>
 		<servlet-name>springmvc</servlet-name>
@@ -39,6 +44,8 @@
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
-    
+
+		
+
 
 </web-app>
