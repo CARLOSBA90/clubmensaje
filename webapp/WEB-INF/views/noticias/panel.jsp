@@ -19,37 +19,11 @@
 
 </head>
 <body>
- <!-- ======= Cabecera ======= -->
-  <header id="header" class="fixed-top d-flex align-items-center">
-    <div class="container d-flex align-items-center">
-
-      <div class="logo me-auto">
-        <h1><a href="#">Club Mensaje</a></h1>
-     
-      </div>
-    </div>
-  </header>
-<main id="main">
-    <!-- ======= Sub seccion ======= -->
-    <section class="breadcrumbs">
-      <div class="container">
-
-        <div class="d-flex justify-content-between align-items-center">
-          <ol>
-            <li><a href="/portal/">Inicio</a></li>
-         <!--   <li><a href="/portal/">Mis noticias</a></li> -->
-        <!--    <li><a href="/portal/">Estadisticas</a></li>  -->
-            <li><a href="/portal/">Cerrar sesión</a></li>
-          </ol>
-        </div>
-
-      </div>
-    </section><!-- detalle -->
-
+<jsp:include page="../includes/cabeceraPanel.jsp"></jsp:include>
     <!-- =======  ======= -->
  	<div class="container-fluid">
 		<div class="row m-1 p-2  d-flex justify-content-center">
-		<div>Lista de noticias</div>
+		<div class="row m-1 p-2  d-flex justify-content-center">Lista de noticias</div>
 			<div class="col-10">
 				<table class="table table-sm">
 					<thead>
@@ -60,7 +34,7 @@
 							<th scope="col">Sección</th>
 							<th scope="col">Vistas</th>
 							<th scope="col">Estado</th>
-							<th scope="col">Editar</th>
+							<th scope="col">Opciones</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -100,7 +74,8 @@
 							  <td><a class="btn btn-danger btn-sm" href="#" role="button">Inactivo</a></td>
 							  </c:otherwise>
 							</c:choose>
-							<td><a class="btn btn-dark btn-sm" href="#" role="button">Editar</a></td>
+							<td><a class="btn btn-success btn-sm" href="#" role="button">Editar</a>
+							    <a class="btn btn-danger btn-sm" href="#" role="button">Eliminar</a></td>
 						</tr>
 					</c:forEach>
 					</tbody>
@@ -112,7 +87,6 @@
 
 
 	<!-- Fin seccion -->
-  </main><!-- Fin #main -->
   <!-- Vendor JS Files -->
   <script src="${recursos}/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="${recursos}/vendor/glightbox/js/glightbox.min.js"></script>

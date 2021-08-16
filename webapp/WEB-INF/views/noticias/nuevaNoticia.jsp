@@ -1,6 +1,7 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 
 <!DOCTYPE html>
 <html>
@@ -18,72 +19,41 @@
 
 </head>
 <body>
- <!-- ======= Cabecera ======= -->
-  <header id="header" class="fixed-top d-flex align-items-center">
-    <div class="container d-flex align-items-center">
-
-      <div class="logo me-auto">
-        <h1><a href="#">Club Mensaje</a></h1>
-     
-      </div>
-    </div>
-  </header>
-<main id="main">
-    <!-- ======= Sub seccion ======= -->
-    <section class="breadcrumbs">
-      <div class="container">
-
-        <div class="d-flex justify-content-between align-items-center">
-          <ol>
-            <li><a href="/portal/">Inicio</a></li>
-         <!--   <li><a href="/portal/">Mis noticias</a></li> -->
-        <!--    <li><a href="/portal/">Estadisticas</a></li>  -->
-            <li><a href="/portal/">Cerrar sesion</a></li>
-          </ol>
-        </div>
-
-      </div>
-    </section><!-- detalle -->
-
+<jsp:include page="../includes/cabeceraPanel.jsp"></jsp:include>
     <!-- =======  ======= -->
-    <spring:url value="/panel/guardar" var="urlForm"></spring:url>
-	<form action=${urlForm} method="post" enctype="multipart/form-data">
+	<spring:hasBindErrors name="noticia">
+		<div class="alert alert-danger" role="alert">
+			Error en guardar noticia: <br>${mensaje}</div>
+	</spring:hasBindErrors>
+	<spring:url value="/panel/guardar" var="urlForm"></spring:url>
+	<form:form action="${urlForm}" modelAttribute="noticia" method="post" enctype="multipart/form-data" >
 		<div class="container-fluid p-1">
 			<div class="row justify-content-md-center">
 				<div class="col-10">
 					<div class="form-group row">
 						<label for="titulo" class="col-sm-2 col-form-label">Titulo</label>
 						<div class="col-sm-10 p-2">
-							<input type="text" class="form-control" id="titulo"
-								placeholder="Titulo nueva noticia" name="titulo">
+							<form:input path="titulo" type="text" class="form-control" id="titulo"
+								placeholder="Titulo nueva noticia" />
 						</div>
 					</div>
 					<div class="form-group row">
 						<label for="seccion" class="col-sm-2 col-form-label">Sección</label>
 						<div class="col-sm-10 p-2">
-							<select class="custom-select" name="seccion">
-							<option value="1" selected>Sucesos</option>
-							<option value="2">Deportes</option>
-						    <option value="3">Musica</option>
-							<option value="4">Ocio y Entrenimiento</option>
-							<option value="5">Recetas</option>
-							<option value="6">Ciencia y Tecnologia</option>
-							</select>
+							<form:select path="seccion" items="${secciones}" itemValue="id" itemLabel="nombre"></form:select>
 						</div>
 					</div>
 					<div class="form-group row">
-						<textarea  name="contenido" id="contenido">
-                          Contenido de noticia..!
-                        </textarea>
+						<form:textarea path="contenido" placeholder="contenido de noticia" id="contenido" />
 					</div>
 
 					<div class="form-group row">
 						<label for="estado" class="col-sm-2 col-form-label">Estado</label>
 						<div class="col-sm-10 p-2">
-							<select class="custom-select" name="estado">
-							<option value="true" selected>Activo</option>
-							<option value="false">Inactivo</option>
-							</select>
+							<form:select path="estado" class="custom-select" >
+							<form:option value="true">Activo</form:option>
+							<form:option value="false">Inactivo</form:option>
+							</form:select>
 						</div>
 					</div>
 					
@@ -102,10 +72,9 @@
 				</div>
 			</div>
 		</div>
-	</form>
+	</form:form>
 
 	<!-- Fin seccion -->
-  </main><!-- Fin #main -->
   <!-- Vendor JS Files -->
   <script src="${recursos}/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="${recursos}/vendor/glightbox/js/glightbox.min.js"></script>

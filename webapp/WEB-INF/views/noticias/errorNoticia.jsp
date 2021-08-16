@@ -16,36 +16,10 @@
 
   <!-- Template Main CSS File -->
   <link href="${recursos}/css/style.css" rel="stylesheet">
-
+  <c:set var="path" value="${pageContext.request.contextPath}"/>
 </head>
 <body>
- <!-- ======= Cabecera ======= -->
-  <header id="header" class="fixed-top d-flex align-items-center">
-    <div class="container d-flex align-items-center">
-
-      <div class="logo me-auto">
-        <h1><a href="#">Club Mensaje</a></h1>
-     
-      </div>
-    </div>
-  </header>
-<main id="main">
-    <!-- ======= Sub seccion ======= -->
-    <section class="breadcrumbs">
-      <div class="container">
-
-        <div class="d-flex justify-content-between align-items-center">
-          <ol>
-            <li><a href="/portal/">Inicio</a></li>
-         <!--   <li><a href="/portal/">Mis noticias</a></li> -->
-        <!--    <li><a href="/portal/">Estadisticas</a></li>  -->
-            <li><a href="/portal/">Cerrar sesión</a></li>
-          </ol>
-        </div>
-
-      </div>
-    </section><!-- detalle -->
-
+<jsp:include page="../includes/cabeceraPanel.jsp"></jsp:include>
     <!-- =======  ======= -->
  	<div class="container-fluid">
 		<div class="row m-1 p-2">
@@ -58,7 +32,6 @@
 
 
 	<!-- Fin seccion -->
-  </main><!-- Fin #main -->
   <!-- Vendor JS Files -->
   <script src="${recursos}/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="${recursos}/vendor/glightbox/js/glightbox.min.js"></script>

@@ -11,6 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -29,7 +30,8 @@ public class ControladorNoticias {
 	private INoticiaServicio servicioNoticias;
 	
 	@GetMapping(value="/nuevo")
-	public String nueva() {
+	public String nueva(@ModelAttribute Noticia noticia, Model model) {
+		model.addAttribute("secciones",servicioNoticias.secciones());
 		return "noticias/nuevaNoticia";
 	}
 	@GetMapping(value="/control")
@@ -44,7 +46,7 @@ public class ControladorNoticias {
 	}
 	
 	@PostMapping(value="/guardar")
-	public String guardar(Noticia noticia, BindingResult result, Model model, 
+	public String guardar(@ModelAttribute Noticia noticia, BindingResult result, Model model, 
 			@RequestParam("cargarImagen") MultipartFile multiPart, HttpServletRequest request) {
 		/// Data binding, conversion automatica de los datos en la entidad Noticia
 	   if(!result.hasErrors())
@@ -61,7 +63,7 @@ public class ControladorNoticias {
 				errores +=error.getDefaultMessage()+" \n";
 			}
 			model.addAttribute("mensaje", errores);
-			return "noticias/errorNoticia";
+			return "noticias/nuevaNoticia";
 		}
 			
 	}

@@ -7,6 +7,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import modelo.Noticia;
+import modelo.Seccion;
 
 
 /// Implementacion de interfaz, llamada a servicio para la entidad Noticias
@@ -45,6 +46,18 @@ public class NoticiaServicioImple implements INoticiaServicio{
 	public void guardarNoticia(Noticia noticia) {
 		lista.add(noticia);
 		System.out.println("METODO GUARDAR NOTICIA DEL SERVICIO: "+noticia.toString());
+	}
+	
+	public List<Seccion> secciones(){
+		//TODO BUSCAR DE BBDD
+		 List<Seccion> lista = new LinkedList<Seccion>();
+		lista.add(new Seccion(1,"Sucesos"));
+		lista.add(new Seccion(2,"Deportes"));
+		lista.add(new Seccion(3,"Musica"));
+		lista.add(new Seccion(4,"Ocio y Entrenimiento"));
+		lista.add(new Seccion(5,"Recetas"));
+		lista.add(new Seccion(6,"Ciencia y Tecnologia"));
+		return lista;		
 	}
 
 }
